@@ -8,10 +8,10 @@ name: hosted-pure-workflow
 on:
   push:
     branches:
-      - patch-dlcvoice
+      - main
   pull_request:
     branches:
-      - patch-dlcvoice
+      - main
 
 jobs:
   job:
@@ -95,7 +95,7 @@ jobs:
         shell: bash
 
       - name: 'Upload artifacts'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: 'modengine-${{ github.sha }}'
           path: '${{ env.CMAKE_BUILD_DIR }}/ModEngine-*-win64.*' # FIXME gtierney: run-cmake isn't respecting CMAKE_INSTALL_PREFIX
