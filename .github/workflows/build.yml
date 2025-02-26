@@ -7,7 +7,7 @@
 name: hosted-pure-workflow
 on:
   push:
-    branches:
+    workflow_dispatch:
       - main
   pull_request:
     branches:
